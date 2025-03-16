@@ -1,0 +1,28 @@
+1. Under a single AWS account, you have set up an Auto Scaling group with a maximum
+capacity of 50 Amazon Elastic Compute Cloud (Amazon EC2) instances in us-west-2.
+When you scale out, however, it only increases to 20 Amazon EC2 instances. What is the
+likely cause?
+
+A. Auto Scaling has a hard limit of 20 Amazon EC2 instances.
+B. If not specified, the Auto Scaling group maximum capacity defaults to 20 Amazon
+EC2 instances.
+C. The Auto Scaling group desired capacity is set to 20, so Auto Scaling stopped at 20
+Amazon EC2 instances.
+D. You have exceeded the default Amazon EC2 instance limit of 20 per region.
+
+The correct answer is:
+D. You have exceeded the default Amazon EC2 instance limit of 20 per region.
+
+Explanation:
+AWS imposes service limits on the number of Amazon EC2 instances you can launch in a region. By default, the limit is 20 instances per region for most instance types.
+If you attempt to scale beyond this limit, Auto Scaling will not be able to launch additional instances, even if the Auto Scaling group's maximum capacity is set higher (e.g., 50 instances).
+To resolve this issue, you can request a limit increase for Amazon EC2 instances in the AWS Support Center.
+Why the other options are incorrect:
+A. Auto Scaling has a hard limit of 20 Amazon EC2 instances: Auto Scaling itself does not impose a hard limit; the limit is imposed by the AWS service (EC2).
+B. If not specified, the Auto Scaling group maximum capacity defaults to 20 Amazon EC2 instances: The maximum capacity of an Auto Scaling group does not default to 20; it must be explicitly set.
+C. The Auto Scaling group desired capacity is set to 20, so Auto Scaling stopped at 20 Amazon EC2 instances: While the desired capacity can limit the number of instances, the question states that the maximum capacity is set to 50, so this is not the cause.
+What to Do:
+Check your current EC2 instance limits in the AWS Service Quotas Console or by using the AWS CLI command:
+Copy
+aws service-quotas get-service-quota --service-code ec2 --quota-code L-1216C47A
+Request a limit increase if necessary through the AWS Support Center.
