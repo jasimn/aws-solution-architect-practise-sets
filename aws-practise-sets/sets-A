@@ -26,3 +26,46 @@ Check your current EC2 instance limits in the AWS Service Quotas Console or by u
 Copy
 aws service-quotas get-service-quota --service-code ec2 --quota-code L-1216C47A
 Request a limit increase if necessary through the AWS Support Center.
+
+2.Elastic Load Balancing allows you to distribute traffic across which of the following?
+A. Only within a single Availability Zone
+B. Multiple Availability Zones within a region
+C. Multiple Availability Zones within and between regions
+D. Multiple Availability Zones within and between regions and on-premises virtualized
+instances running OpenStac
+
+The correct answer is:
+B. Multiple Availability Zones within a region
+Explanation:
+Elastic Load Balancing (ELB) is designed to distribute incoming traffic across multiple targets (e.g., EC2 instances, containers, IP addresses) within multiple Availability Zones (AZs) in a single AWS region.
+This ensures high availability and fault tolerance for your applications.
+ELB does not distribute traffic across regions or between on-premises and cloud resources.
+Why the other options are incorrect:
+A. Only within a single Availability Zone: ELB can distribute traffic across multiple Availability Zones, not just one.
+C. Multiple Availability Zones within and between regions: ELB operates within a single region and does not span multiple regions.
+D. Multiple Availability Zones within and between regions and on-premises virtualized instances running OpenStack: ELB does not support cross-region or hybrid (on-premises) load balancing.
+
+3.Amazon CloudWatch offers which types of monitoring plans? (Choose 2 answers)
+A. Basic
+B. Detailed
+C. Diagnostic
+D. Precognitive
+E. Retroactive
+
+The correct answers are:
+A. Basic
+B. Detailed
+
+Explanation:
+Amazon CloudWatch offers two types of monitoring plans for EC2 instances:
+
+Basic Monitoring:
+Free of charge.
+Provides metrics at 5-minute intervals.
+Detailed Monitoring:
+Available at an additional cost.
+Provides metrics at 1-minute intervals for more granular insights.
+Why the other options are incorrect:
+C. Diagnostic: Not a monitoring plan offered by CloudWatch.
+D. Precognitive: Not a monitoring plan offered by CloudWatch.
+E. Retroactive: Not a monitoring plan offered by CloudWatch.
